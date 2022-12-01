@@ -1,0 +1,41 @@
+import { cars } from "./cars";
+import { useState, useId } from "react";
+
+function SearchCars() {
+  const [year, setYear] = useState();
+
+  const id = useId();
+
+  function OnChangeCarYear(e) {
+    const carYear = e.target.value;
+    setYear(carYear);
+    console.log(carYear);
+  }
+  return (
+    <>
+      <div style={{ marginBottom: "200px" }}>
+        <form>
+          <label>Rocznik:</label>
+          <input type="number" onChange={OnChangeCarYear} id="rocznik" />
+        </form>
+      </div>
+      <div>
+        {cars.map((car) => {
+          if (
+            car.year == year || // usun te dwie pionowe strzalki i zakomentuj te warunki z 5 i dziala
+            (car.year <= parseInt(year + 5) && car.year >= parseInt(year - 5)) //NIE DZIALA XD
+          ) {
+            return (
+              <div style={{ border: "2px solid black" }} key={id}>
+                <p>{car.brand}</p>
+                <p>{car.model}</p>
+                <p>{car.year}</p>
+              </div>
+            );
+          }
+        })}
+      </div>
+    </>
+  );
+}
+export default SearchCars;
