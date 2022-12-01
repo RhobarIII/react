@@ -1,0 +1,13 @@
+import logo from './logo.svg';
+import './App.css';
+import SearchCars from "./SearchCars"
+
+function App() {
+  return (
+    <div className="App">
+      <SearchCars />
+    </div>
+  );
+}
+
+export default App;
