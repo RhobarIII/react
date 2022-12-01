@@ -1,0 +1,17 @@
+export const cars = [
+  {
+    brand: "Audi",
+    model: "A6",
+    year: 2010,
+  },
+  {
+    brand: "Mercedes",
+    model: "GLS",
+    year: 2020,
+  },
+  {
+    brand: "BMW",
+    model: "i4 E50",
+    year: 2022,
+  },
+];
